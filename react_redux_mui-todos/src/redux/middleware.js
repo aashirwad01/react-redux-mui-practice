@@ -9,6 +9,6 @@ export function* addTodo(){
     });
 }
 
-export default function* (){
+export default function* yieldTodo (){
     yield* addTodo();
 }
