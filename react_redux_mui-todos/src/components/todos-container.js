@@ -29,7 +29,7 @@ export default function TodosContainer() {
         const importantTodos=[];
         const notImportantTodos=[];
 
-        todos.forEach(todo=>{
+        todos.forEach((todo)=>{
             if(todo.important){
                 importantTodos.push(todo);
             }
@@ -53,7 +53,7 @@ export default function TodosContainer() {
             <List>
                 {prioritisedTodos.map(todo=>{
                     if(!todo.completed){
-                        return <TodoItem {...todo}/>
+                        return <TodoItem key={todo.id} {...todo}/>
                     }
                     else{
                         return null;
@@ -71,7 +71,7 @@ export default function TodosContainer() {
               <List>
                 {prioritisedTodos.map(todo=>{
                     if(todo.completed){
-                        return <TodoItem {...todo}/>
+                        return <TodoItem key={todo.id} {...todo}/>
                     }
                     else{
                         return null;
