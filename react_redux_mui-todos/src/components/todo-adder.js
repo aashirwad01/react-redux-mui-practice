@@ -72,7 +72,7 @@ export default function TodoAdder() {
 
   return <Box>
       <TextField className={classes.text}
-      style={{width:"15rem",marginLeft:"-2.5rem"}}
+      style={{width:"15rem",marginLeft:"-2rem"}}
       inputRef={titleFieldRef}
       label="Add New Todo" 
       variant="filled"
