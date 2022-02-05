@@ -7,12 +7,29 @@ import { useDispatch } from 'react-redux';
 import { DELETE_TODO, TOGGLE_COMPLETED,TOGGLE_IMPORTANT } from '../redux/actions';
 import DeleteIcon from '@material-ui/icons/Delete'
 import { IconButton } from '@material-ui/core';
-import { ListItemSecondaryAction } from '@material-ui/core';
+import { ListItemSecondaryAction , makeStyles } from '@material-ui/core';
 import StarIcon from '@material-ui/icons/Star'
 import StarOutlineIcon from '@material-ui/icons/StarOutline'
 
 
 export default function TodoItem({id,title,completed,important}) {
+    
+    const classes =makeStyles((theme)=>({
+
+        listwrapper:{
+            display:"flex",
+            
+        },
+        checkbox:{
+        
+
+        },
+        // typed:{
+        //     marginLeft:theme.spacing(10),
+        // }
+
+
+    }))
 
     const dispatch=useDispatch()
     function toggleCheckBox(){
@@ -48,11 +65,11 @@ export default function TodoItem({id,title,completed,important}) {
     }
 
   return (
-      <ListItem dense >
-          <FormGroup>
+      <ListItem dense className={classes.listwrapper}  >
+          <FormGroup >
               <FormControlLabel
               control={
-                  <Checkbox 
+                  <Checkbox className={classes.checkbox}
                   checked={completed}
                   onChange={toggleCheckBox}
                   name={title}
@@ -62,7 +79,7 @@ export default function TodoItem({id,title,completed,important}) {
                   />
 
               }
-              label={<Typography style={{textDecoration:completed && "line-through",
+              label={<Typography className={classes.typed}  style={{textDecoration:completed && "line-through", marginRight:"5rem",
               }}>
                   {title}
               </Typography>}

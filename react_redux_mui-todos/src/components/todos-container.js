@@ -7,10 +7,26 @@ import TodoItem from './todo-item';
 
 const useStyles=makeStyles(()=>({
     root:{
-        margin:20,
-        padding:20,
+        margin:"4rem",
+        padding:"4rem",
         backgroundColor:"rgb(92.9%,92.9%,92.9%)",
+        minWidth:"15rem" ,
+       
+
+        "@media (max-width: 480px)":{
+            
+            margin:"-2rem",
+            padding:"1rem",
+            marginTop:"1rem",
+            marginLeft:"-3.5rem",
+
+        }
+    },
+    text:{
+        margin:"4rem", 
     }
+
+    
 
 }))
 
@@ -44,9 +60,11 @@ export default function TodosContainer() {
 
 
   return <Box className={classes.root}>
-      <Grid container spacing={2}>
-          <Grid item xs={6}>
-              <Typography align="left" variant="h5" gutterBottom>
+      <Grid container  spacing={2} >
+          <Grid item sx={{ flexDirection: { xs: "column", md: "row"} }}>
+              <Typography 
+            //   style={{margin:4}} 
+              classname={classes.text} align="left" variant="h5" gutterBottom >
                 My Todos
               </Typography>
               <Divider/>
@@ -63,7 +81,7 @@ export default function TodosContainer() {
             </List>
               
           </Grid>
-          <Grid item xs={6}>
+          <Grid item sx={{ flexDirection: { xs: "column", md: "row"} }}>
           <Typography align="left" variant="h5" gutterBottom>
                 Completed
               </Typography>
