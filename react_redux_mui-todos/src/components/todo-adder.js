@@ -8,24 +8,65 @@ import {ADD_TODO} from "../redux/actions"
 const useStyles=makeStyles(()=>({
 
   root:{
+
+    "@media (max-width: 300px ) ":{
+
+   
+     display:'flex',
+    //  flexDirection:'column',
+     alignItems:'center'
+      // margin:"-2rem",
+      // padding:"1rem",
+      // marginTop:"1rem",
+      // marginLeft:"-3.5rem",
+  
+  }
     
   },
 
   text:{
+    backgroundImage: `linear-gradient(260deg,#2376ae 10%,#CF9FFF 50%);`,
+    color:'black',
+    "@media (max-width: 360px ) ":{
+
+      width:"60vw" ,
+      
+      // margin:"-2rem",
+      // padding:"1rem",
+      // marginTop:"1rem",
+      // marginLeft:"-3.5rem",
+
+  },
+  "@media (max-width: 300px ) ":{
+
+    width:"50vw" ,
+    marginLeft:"28vw",
+   
+    // margin:"-2rem",
+    // padding:"1rem",
+    // marginTop:"1rem",
+    // marginLeft:"-3.5rem",
+
+}
 
   },
 
  
-  btn:{
-    // height:55,
+  btnu:{
+   
 
-    "@media (max-width: 480px)":{
-          
-     
-      marginTop:"1rem",
-     
+   
+  "@media (max-width: 300px ) ":{
 
-  }
+   
+    // marginLeft:"-100vw",
+    // marginBottom:"5vh"
+    // margin:"-2rem",
+    // padding:"1rem",
+    // marginTop:"1rem",
+    // marginLeft:"-3.5rem",
+
+}
 
   }
 
@@ -70,9 +111,10 @@ export default function TodoAdder() {
         // we dispatch an add todo action here
     }
 
-  return <Box>
+  return <Box className={classes.root}>
       <TextField className={classes.text}
-      style={{width:"15rem",marginLeft:"-2rem"}}
+      // fullWidth
+      style={{minWidth:"30vw"}}
       inputRef={titleFieldRef}
       label="Add New Todo" 
       variant="filled"
@@ -81,10 +123,8 @@ export default function TodoAdder() {
           
 
       </TextField>
-      <Button classname={classes.btn} 
-      style={{
-          height:55,
-          }} 
+      <Button classname={classes.btnu} 
+         style={{height:55}}
           variant="contained" 
           color="primary"
           onClick={addTodoItem}

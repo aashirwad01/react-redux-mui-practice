@@ -4,26 +4,57 @@ import { makeStyles } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import TodoItem from './todo-item';
+import { useMediaQuery } from '@material-ui/core';
+import { useTheme } from '@material-ui/core';
+
+
 
 const useStyles=makeStyles(()=>({
     root:{
-        margin:"4rem",
-        padding:"4rem",
-        backgroundColor:"rgb(92.9%,92.9%,92.9%)",
-        minWidth:"15rem" ,
+        marginTop:"5vh",
+        padding:"3vh",
+        // backgroundImage: `linear-gradient(280deg,#2376ae 60%,#000000 90%);`,
+        backgroundImage: `linear-gradient(80deg,#2376ae 20%,#c16ecf 60%);`,
+        // backgroundColor:"rgb(92.9%,92.9%,92.9%)",
+        maxWidth:"65vw" ,
        
 
-        "@media (max-width: 480px)":{
+        "@media (max-width: 1100px ) and (min-width:800px)":{
+
+            maxWidth:"40vw" ,
             
-            margin:"-2rem",
-            padding:"1rem",
-            marginTop:"1rem",
-            marginLeft:"-3.5rem",
+            // margin:"-2rem",
+            // padding:"1rem",
+            // marginTop:"1rem",
+            // marginLeft:"-3.5rem",
+
+        } ,
+
+        "@media (max-width: 360px ) ":{
+
+            maxWidth:"80vw" ,
+           
+            // margin:"-2rem",
+            // padding:"1rem",
+            // marginTop:"1rem",
+            // marginLeft:"-3.5rem",
+
+        },
+        "@media (max-width: 300px ) ":{
+
+            maxWidth:"100vw" ,
+            padding:"1vh",
+            marginLeft:"20vw"
+            // margin:"-2rem",
+            // padding:"1rem",
+            // marginTop:"1rem",
+            // marginLeft:"-3.5rem",
 
         }
     },
     text:{
         margin:"4rem", 
+        
     }
 
     
@@ -32,6 +63,7 @@ const useStyles=makeStyles(()=>({
 
 export default function TodosContainer() {
     const classes=useStyles();
+    
 
     const {todos}=useSelector((state)=>{
         return {
@@ -60,7 +92,7 @@ export default function TodosContainer() {
 
 
   return <Box className={classes.root}>
-      <Grid container  spacing={2} >
+      <Grid  container   spacing={10} >
           <Grid item sx={{ flexDirection: { xs: "column", md: "row"} }}>
               <Typography 
             //   style={{margin:4}} 

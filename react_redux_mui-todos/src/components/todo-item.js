@@ -18,6 +18,7 @@ export default function TodoItem({id,title,completed,important}) {
 
         listwrapper:{
             display:"flex",
+           
             
         },
         checkbox:{
