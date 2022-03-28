@@ -53,7 +53,7 @@ const useStyles=makeStyles(()=>({
         }
     },
     text:{
-        margin:"4rem", 
+        // margin:"4rem", 
         
     }
 
@@ -86,9 +86,24 @@ export default function TodosContainer() {
             }
         })
 
+        
+
         return importantTodos.concat(notImportantTodos)
 
     })();
+
+    var mytodo=0;
+    var completetodo=0;
+    (prioritisedTodos.map(todo=>{
+        if(!todo.completed){
+            mytodo=mytodo+1
+        }
+        else{
+            completetodo=completetodo+1;
+        }
+    }))
+
+  
 
 
   return <Box className={classes.root}>
@@ -96,8 +111,8 @@ export default function TodosContainer() {
           <Grid item sx={{ flexDirection: { xs: "column", md: "row"} }}>
               <Typography 
             //   style={{margin:4}} 
-              classname={classes.text} align="left" variant="h5" gutterBottom >
-                My Todos
+              className={classes.text} align="left" variant="h5" gutterBottom >
+                My Todos ({mytodo})
               </Typography>
               <Divider/>
             <List>
@@ -115,7 +130,7 @@ export default function TodosContainer() {
           </Grid>
           <Grid item sx={{ flexDirection: { xs: "column", md: "row"} }}>
           <Typography align="left" variant="h5" gutterBottom>
-                Completed
+                Completed Todos ({completetodo})
               </Typography>
               <Divider/>
               <List>
