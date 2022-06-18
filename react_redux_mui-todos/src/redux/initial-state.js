@@ -3,31 +3,31 @@ export const initialState=JSON.parse(window.localStorage.getItem("Todos"))
     todos:[
         {
         id:0,
-        title:"Buy Milk",
+        title:"This is Some Lines",
         completed:false,
         important:false,
     },
     {
         id:1,
-        title:"Clean my room",
+        title:"Exercise",
         completed:true,
         important:false,
     },
     {
         id:2,
-        title:"Get Medicines",
+        title:"Some Lines",
         completed:false,
         important:true,
     },
     {
         id:3,
-        title:"Car Service",
+        title:"Delete all and add your list",
         completed:false,
         important:true,
     },
     {
         id:4,
-        title:"Prepare for meeting",
+        title:"Car wash",
         completed:true,
         important:false,
     },
